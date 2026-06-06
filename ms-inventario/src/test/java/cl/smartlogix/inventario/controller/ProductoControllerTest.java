@@ -46,9 +46,9 @@ class ProductoControllerTest {
                 .andExpect(status().isOk());
     }
 
-    // =========================
+
     // OBTENER POR ID
-    // =========================
+
     @Test
     void obtener_ok() throws Exception {
         Mockito.when(productoService.obtenerPorId(anyLong()))
@@ -58,9 +58,8 @@ class ProductoControllerTest {
                 .andExpect(status().isOk());
     }
 
-    // =========================
+
     // CREAR
-    // =========================
     @Test
     void crear_ok() throws Exception {
         ProductoRequestDTO request = new ProductoRequestDTO("P001", "Caja", "Desc", 10);
@@ -74,9 +73,8 @@ class ProductoControllerTest {
                 .andExpect(status().isCreated());
     }
 
-    // =========================
+
     // ACTUALIZAR
-    // =========================
     @Test
     void actualizar_ok() throws Exception {
         ProductoRequestDTO request = new ProductoRequestDTO("P001", "Caja", "Desc", 10);
@@ -90,9 +88,9 @@ class ProductoControllerTest {
                 .andExpect(status().isOk());
     }
 
-    // =========================
+
     // ELIMINAR
-    // =========================
+
     @Test
     void eliminar_ok() throws Exception {
         Mockito.doNothing().when(productoService).eliminar(anyLong());
@@ -101,9 +99,8 @@ class ProductoControllerTest {
                 .andExpect(status().isNoContent());
     }
 
-    // =========================
+
     // DESCONTAR STOCK
-    // =========================
     @Test
     void descontarStock_ok() throws Exception {
         DescontarStockDTO dto = new DescontarStockDTO(5);
